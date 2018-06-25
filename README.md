@@ -25,3 +25,10 @@ What however **seems** missing is :
     * System Context diagram (required immediately)
     * Container Diagram and Component Diagram (required after we have finished deciding on what open sources we will reuse to accomplish our goals) 
 3. Suggest any problems and solutions that you face while taking backup and monitor uptime **in a distributed way**. Lets discuss them in github issues
+
+
+## Suggestions ##
+1) For monitoring and backup, a centralized server can be used that will take care of backup of all servers linked to it as well as do monitoring. For this approach client-server model will be used.
+
+2) Second approach can be used is write name of files to be backed up and based on configuration file backup will be done. In this approach files and directory mentioned in configuration file will be backed up to locally and then this backup will be pushed to centralized storage (could be S3 or something) and after successful copy local backup will be deleted.
+
