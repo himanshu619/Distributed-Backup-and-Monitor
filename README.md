@@ -25,3 +25,24 @@ What however **seems** missing is :
     * System Context diagram (required immediately)
     * Container Diagram and Component Diagram (required after we have finished deciding on what open sources we will reuse to accomplish our goals) 
 3. Suggest any problems and solutions that you face while taking backup and monitor uptime **in a distributed way**. Lets discuss them in github issues
+
+## Reported issues ##
+Problems that needs to consider while creating solution:
+1. What if backup server is hacked
+2. Hackers can hack data while client sending data to backup server 
+3. How backup server will know about changes in respective files and when to do backup for any updated file
+4. There are some known cases where users put backup on same cloud provider as they faced access issue with cloud provider. 
+
+## Solution suggestion ##
+
+1. Create one offline copy of data that can be replicated after 15 days or month. So, in case of total disaster we have at least have one copy of data.
+2. Use client-side data encryption before sending data over network.
+3. Use automation tool to detect changes and trigger backup job.
+4. Keep backup of server on other cloud platform
+
+## Security of servers ##
+
+1.If possible use VPC with private network 
+2. Use any password rotation tool to change password on regular intervals
+3. Maintain Firewall
+4. Regular OS patching
